@@ -405,8 +405,15 @@ class Solution:
 
 
 
-    print(reverse(1534236469))
+    # print(reverse(1534236469))
 
+    def removeDuplicates(nums: List[int]) -> int:
+        nums_set = set(nums)
+        nums = list(nums_set)
+        print(nums_set , nums)
+        return(len(nums_set))
+
+    print(removeDuplicates([0,1,1]))
 
 
 
