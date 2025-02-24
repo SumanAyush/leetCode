@@ -413,9 +413,35 @@ class Solution:
         print(nums_set , nums)
         return(len(nums_set))
 
-    print(removeDuplicates([0,1,1]))
+    # print(removeDuplicates([0,1,1]))
+
+#
+# 118. Pascal's Triangle
+#
+
+    def generate(numRows: int) -> List[List[int]]:
+        final_list = [[1]]
+        for i in range(2, numRows+1):
+            dummy_list = [1]
+            for x in range(len(final_list[i-2])):
+
+                print( x , len(final_list[i-2]) )
+
+                if x < len(final_list[i-2])-1:
+                    print("HERE")
+                    print(" == >  " , final_list[i-2][x: x+2])
+
+                    dummy_list.append(sum(final_list[i-2][x: x+2]))
+                else:
+                    dummy_list.append(1)
+
+                    print(dummy_list)
+
+                    final_list.append(dummy_list)
+        return final_list
 
 
+    print(generate(5))
 
     # print(threeSum([-1,0,1,2,-1,-4]))
     # inputs = ["(([]){})", "" , "([])" , "()" , "()[]{}" , "(]" , "([)]" , "(([])({}))" , "[[[]" ,"[[]]","]" ,"(])"]
